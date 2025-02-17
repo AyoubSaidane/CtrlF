@@ -1,4 +1,4 @@
-# RAG-powered Q&A Application
+# Knowledge Management tool for consultants
 
 This project implements a Retrieval-Augmented Generation (RAG) system using Python and React. It processes documents, creates embeddings, and provides a Q&A interface powered by OpenAI and Supabase.
 
