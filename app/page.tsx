@@ -4,13 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Send, X, Bot, User, FileText, ExternalLink, Eye } from 'lucide-react';
-import * as pdfjs from 'pdfjs-dist';
 import html2canvas from 'html2canvas';
-
-// Configuration de PDF.js
-if (typeof window !== 'undefined') {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-}
 
 interface DocumentPreview {
   url: string;
@@ -41,6 +35,15 @@ interface ChatResponse {
 
 const API_URL = 'http://localhost:8000';
 
+const configurePdfjs = async () => {
+  if (typeof window !== 'undefined') {
+    const pdfjs = await import('pdfjs-dist');
+    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+    return pdfjs;
+  }
+  return null;
+};
+
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -52,62 +55,60 @@ export default function Home() {
   const [selectedPreview, setSelectedPreview] = useState<DocumentPreview | null>(null);
 
   const generatePreview = async (doc: DocumentPreview) => {
+    const pdfjs = await configurePdfjs();
+    if (!pdfjs) return;
+    
     const previewKey = `${doc.url}_${doc.page}`;
+    
+    // Use functional updates to get latest state
+    setLoadingPreviews(prev => {
+      if (prev.has(previewKey) || previews.get(previewKey)) return prev;
+      const next = new Set(prev);
+      next.add(previewKey);
+      return next;
+    });
+  
     try {
-      const existingPreview = previews.get(previewKey);
-      if (existingPreview || loadingPreviews.has(previewKey)) return;
-
-      setLoadingPreviews(prev => new Set(prev).add(previewKey));
-      setPreviewErrors(prev => {
-        const next = new Map(prev);
-        next.delete(previewKey);
-        return next;
-      });
-
-      const loadingTask = pdfjs.getDocument({
+      const pdf = await pdfjs.getDocument({
         url: doc.url,
-      });
-
-      const pdf = await loadingTask.promise;
+        disableAutoFetch: true,
+        disableStream: true,
+      }).promise;
+  
       const page = await pdf.getPage(doc.page);
       
-      // Petite prévisualisation
-      const smallScale = 0.3;
-      const smallViewport = page.getViewport({ scale: smallScale });
-      
+      // Small preview
+      const smallViewport = page.getViewport({ scale: 0.5 });
       const smallCanvas = document.createElement('canvas');
       smallCanvas.width = smallViewport.width;
       smallCanvas.height = smallViewport.height;
       
       const smallContext = smallCanvas.getContext('2d');
-      if (!smallContext) throw new Error('Impossible de créer le contexte canvas');
-
+      if (!smallContext) throw new Error('Failed to get small canvas context');
+      
       await page.render({
         canvasContext: smallContext,
         viewport: smallViewport
       }).promise;
-
-      // Grande prévisualisation
-      const largeScale = 1.5;
-      const largeViewport = page.getViewport({ scale: largeScale });
-      
+  
+      // Large preview
+      const largeViewport = page.getViewport({ scale: 1.5 });
       const largeCanvas = document.createElement('canvas');
       largeCanvas.width = largeViewport.width;
       largeCanvas.height = largeViewport.height;
-      
+  
       const largeContext = largeCanvas.getContext('2d');
-      if (!largeContext) throw new Error('Impossible de créer le contexte canvas');
-
+      if (!largeContext) throw new Error('Failed to get large canvas context');
+  
       await page.render({
         canvasContext: largeContext,
         viewport: largeViewport
       }).promise;
-
-      setPreviews(prev => new Map(prev).set(previewKey, smallCanvas.toDataURL()));
-      setLargePreviews(prev => new Map(prev).set(previewKey, largeCanvas.toDataURL()));
+  
+      setPreviews(prev => new Map(prev.set(previewKey, smallCanvas.toDataURL())));
+      setLargePreviews(prev => new Map(prev.set(previewKey, largeCanvas.toDataURL())));
     } catch (error) {
-      console.error('Erreur lors de la génération de la prévisualisation:', error);
-      setPreviewErrors(prev => new Map(prev).set(previewKey, 'Erreur de chargement'));
+      setPreviewErrors(prev => new Map(prev.set(previewKey, error instanceof Error ? error.message : 'Unknown error')));
     } finally {
       setLoadingPreviews(prev => {
         const next = new Set(prev);
@@ -181,12 +182,14 @@ export default function Home() {
       const assistantMessage: Message = {
         role: 'assistant',
         content: data.text,
-        documents: data.documents.map(doc => ({
-          url: doc.url,
-          page: doc.page,
-          title: doc.title,
-          previewUrl: previews.get(`${doc.url}_${doc.page}`)
-        })),
+        documents: data.documents.map(doc => {
+          const cleanUrl = doc.url.split('#')[0].split('?')[0];
+          return {
+            ...doc,
+            url: cleanUrl,
+            previewUrl: previews.get(`${cleanUrl}_${doc.page}`)
+          };
+        }),
       };
       console.log('Message assistant créé:', assistantMessage);
       setMessages(prev => [...prev, assistantMessage]);
@@ -221,22 +224,29 @@ export default function Home() {
   };
 
   const handlePreviewClick = (doc: DocumentPreview) => {
-    const previewKey = `${doc.url}_${doc.page}`;
+    const cleanUrl = doc.url.split('#')[0].split('?')[0];
+    const previewKey = `${cleanUrl}_${doc.page}`;
     const largePreviewUrl = largePreviews.get(previewKey);
+    
     if (largePreviewUrl) {
       setSelectedPreview({
         ...doc,
+        url: cleanUrl,
         largePreviewUrl
       });
     }
   };
 
   useEffect(() => {
+    const controller = new AbortController();
+    
     messages.forEach(message => {
       message.documents?.forEach(doc => {
         generatePreview(doc);
       });
     });
+  
+    return () => controller.abort();
   }, [messages]);
 
   return (
@@ -258,7 +268,7 @@ export default function Home() {
                 <Bot className="w-12 h-12 mx-auto text-gray-400" />
                 <h2 className="text-2xl font-bold text-gray-700">How can I assist you today?</h2>
                 <p className="text-gray-500 max-w-md mx-auto">
-                  As your consulting assistant, I’m here to analyze documents and provide answers to your questions.
+                  As your consulting assistant, I'm here to analyze documents and provide answers to your questions.
                 </p>
               </div>
             </div>
