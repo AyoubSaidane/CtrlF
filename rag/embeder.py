@@ -12,9 +12,10 @@ class Embeder:
         self.SUPABASE_URL = os.getenv("SUPABASE_URL")
         self.SUPABASE_KEY = os.getenv("SUPABASE_KEY")
         self.SUPABASE_CONNECTION_STRING = os.getenv("SUPABASE_CONNECTION_STRING")
-        
+        self.OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
         self.supabase = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
-        self.embed_model = OpenAIEmbedding(model="text-embedding-ada-002")
+        self.embed_model = OpenAIEmbedding(model="text-embedding-ada-002", api_key=self.OPENAI_API_KEY)
         self.vector_store = SupabaseVectorStore(
             postgres_connection_string=self.SUPABASE_CONNECTION_STRING,
             collection_name="base_demo",
@@ -26,7 +27,8 @@ class Embeder:
         index = VectorStoreIndex.from_documents(
             documents,
             storage_context=self.storage_context, 
-            embed_model=self.embed_model
+            embed_model=self.embed_model,
+            include_metadata=True
         )
         print("✅ Documents successfully embedded and stored in Supabase!")
         return index
@@ -45,5 +47,5 @@ if __name__ == "__main__":
     from parser import Parser
     parser = Parser()
     embeder = Embeder()
-    docs = parser.parse_document(['PDF_026_investor-pulse-21-slideshow-221025.pdf'])
+    docs = parser.parse_document(['rag/../source/BCG/pdfs/PDF_011_Boston_Consulting_Group_Proposal.pdf'])
     index = embeder.embed_document(docs)

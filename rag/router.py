@@ -22,7 +22,6 @@ class ChooseQueryEngineEvent(Event):
     answers: Answers
     query_str: str
 
-##synthe
 class SynthesizeAnswersEvent(Event):
     """Synthesize answers event."""
 
