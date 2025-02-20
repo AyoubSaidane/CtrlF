@@ -13,7 +13,7 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Pyth
 
 1. Create and activate a Python virtual environment:
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ```
 
