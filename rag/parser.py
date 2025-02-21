@@ -2,6 +2,7 @@ from llama_cloud_services import LlamaParse
 from llama_index.core import SimpleDirectoryReader
 from dotenv import load_dotenv
 import os
+import time
 
 class Parser:
     def __init__(self):
@@ -19,23 +20,45 @@ class Parser:
         )
     
     def parse_document(self, file_path):
-        file_extractor = {os.path.splitext(file_path[0])[1]: self.parser}
-        documents = SimpleDirectoryReader(
-            input_files=file_path, 
+        file_extractor = {os.path.splitext(file_path)[1]: self.parser}
+        chunks = SimpleDirectoryReader(
+            input_files=[file_path], 
             filename_as_id=True,
             file_extractor=file_extractor
         ).load_data()
         
         # Extraire et incrémenter le numéro de page à partir du doc_id
-        for doc in documents:
+        for chunk in chunks:
             try:
-                page_str = doc.doc_id.split('_')[-1]
-                doc.metadata['page_number'] = int(page_str) + 1
+                page_str = chunk.doc_id.split('_')[-1]
+                chunk.metadata['page_number'] = int(page_str) + 1
             except (ValueError, IndexError):
-                print(f"Warning: Could not extract page number from doc_id: {doc.doc_id}")
-                doc.metadata['page_number'] = 0
+                print(f"Warning: Could not extract page number from doc_id: {chunk.doc_id}")
+                chunk.metadata['page_number'] = 0
         
-        print(f"Parsed {len(documents)} documents")
+        print(f"Parsed {len(chunks)} chunks for document {file_path}")
+        
+        return chunks
+    
+    def list_all_files(self, directory):
+        all_files = []
+        for root, _, files in os.walk(directory):
+            for file in files:
+                all_files.append(os.path.join(root, file))
+        return all_files
+
+    def parse_directory(self, directory):
+        file_paths = self.list_all_files(directory)
+        documents = []
+        
+        start_time = time.time()  # Start timer
+        
+        for file_path in file_paths:
+            documents.append(self.parse_document(file_path))
+        
+        end_time = time.time()  # End timer
+        elapsed_time = end_time - start_time
+        print(f"Parsing the directory took {elapsed_time:.2f} seconds.")
         
         return documents
 
@@ -44,9 +67,4 @@ class Parser:
     
 if __name__ == "__main__":
     parser = Parser()
-    docs = parser.parse_document(['PDF_026_investor-pulse-21-slideshow-221025.pdf'])
-    preview = parser.preview_text(docs)
-    print("Document Preview:")
-    print("-" * 50)
-    print(preview)
-    print("-" * 50)
+    docs = parser.parse_directory(os.getcwd()+'/source/BCG/pdfs')
