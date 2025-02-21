@@ -13,7 +13,7 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Pyth
 
 1. Create and activate a Python virtual environment:
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ```
 
@@ -24,7 +24,9 @@ pip install -r requirements.txt
 
 3. Configure environment variables by creating a `.env` file in the project root:
 ```plaintext
+LLAMA_CLOUD_API_KEY=your_llama_cloud_api_key
 OPENAI_API_KEY=your_openai_api_key
+GOOGLE_API_KEY=your_google_api_key
 SUPABASE_URL=your_supabase_project_url
 SUPABASE_KEY=your_supabase_api_key
 ```
