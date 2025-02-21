@@ -1,7 +1,7 @@
 from llama_index.llms.gemini import Gemini
 from router import RouterQueryWorkflow
 from helper import ROUTER_PROMPT
-from embeder import Embeder
+from indexer import Indexer
 from agent import RouterOutputAgentWorkflow
 from llama_index.core.query_engine import RetrieverQueryEngine
 from IPython.display import display, Markdown
@@ -14,8 +14,8 @@ from pydantic import BaseModel
 from convert import process_input
 from fastapi.middleware.cors import CORSMiddleware
 
-embeder = Embeder()
-index = embeder.retrieve_index()
+indexer = Indexer()
+index = indexer.retrieve_index()
 
 llm = Gemini(model = "models/gemini-2.0-flash")
 

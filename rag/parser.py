@@ -54,7 +54,7 @@ class Parser:
         start_time = time.time()  # Start timer
         
         for file_path in file_paths:
-            documents.append(self.parse_document(file_path))
+            documents += self.parse_document(file_path)
         
         end_time = time.time()  # End timer
         elapsed_time = end_time - start_time

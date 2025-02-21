@@ -5,7 +5,7 @@ from supabase import create_client
 from dotenv import load_dotenv
 import os
 
-class Embeder:
+class Indexer:
     def __init__(self):
         load_dotenv()
         
@@ -23,14 +23,14 @@ class Embeder:
         
         self.storage_context = StorageContext.from_defaults(vector_store=self.vector_store)
 
-    def embed_document(self, documents):
+    def index_document(self, documents):
         index = VectorStoreIndex.from_documents(
             documents,
             storage_context=self.storage_context, 
             embed_model=self.embed_model,
             include_metadata=True
         )
-        print("✅ Documents successfully embedded and stored in Supabase!")
+        print("✅ Documents successfully indexed and stored in Supabase!")
         return index
     
     def retrieve_index(self):
@@ -46,6 +46,6 @@ class Embeder:
 if __name__ == "__main__":
     from parser import Parser
     parser = Parser()
-    embeder = Embeder()
-    docs = parser.parse_document(['rag/../source/BCG/pdfs/PDF_011_Boston_Consulting_Group_Proposal.pdf'])
-    index = embeder.embed_document(docs)
+    indexer = Indexer()
+    docs = parser.parse_document(os.getcwd()+'/source/BCG/pdfs/PDF_002_Media_in_NYC_2012.pdf')
+    index = indexer.index_document(docs)
