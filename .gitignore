@@ -5,3 +5,12 @@ venv/
 
 node_modules/
 .next/
+document.json
+index.json
+client/credentials.json
+
+connector/credentials.json
+connector/token.pickle
+connector/__pycache__/
+
+rag/__pycache__/

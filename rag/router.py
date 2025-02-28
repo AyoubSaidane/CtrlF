@@ -1,11 +1,10 @@
 from typing import List, Optional, Any
-from helper import Answers
+from llama_index.core.bridge.pydantic import BaseModel
 from llama_index.core.query_engine import (
-    BaseQueryEngine,
-    RetrieverQueryEngine,
+    BaseQueryEngine
 )
 from llama_index.core import PromptTemplate
-from llama_index.llms.openai import OpenAI
+from llama_index.llms.gemini import Gemini
 from llama_index.core.llms import LLM
 from llama_index.core.response_synthesizers import TreeSummarize
 from llama_index.core.workflow import (
@@ -15,6 +14,17 @@ from llama_index.core.workflow import (
     StopEvent,
     step,
 )
+
+class Answer(BaseModel):
+    """Answer model."""
+
+    choice: int
+    reason: str
+
+class Answers(BaseModel):
+    """List of answers model."""
+
+    answers: List[Answer]
 
 class ChooseQueryEngineEvent(Event):
     """Query engine event."""
@@ -27,7 +37,6 @@ class SynthesizeAnswersEvent(Event):
 
     responses: List[Any]
     query_str: str
-
 
 class RouterQueryWorkflow(Workflow):
     """Router query workflow."""
@@ -50,7 +59,7 @@ class RouterQueryWorkflow(Workflow):
         self.query_engines: List[BaseQueryEngine] = query_engines
         self.choice_descriptions: List[str] = choice_descriptions
         self.router_prompt: PromptTemplate = router_prompt
-        self.llm: LLM = llm or OpenAI(temperature=0, model="gpt-4o")
+        self.llm: LLM = llm or Gemini(temperature=0, model="gemini-2.0-flash-001")
         self.summarizer: TreeSummarize = summarizer or TreeSummarize()
 
     def _get_choice_str(self, choices):
@@ -81,7 +90,6 @@ class RouterQueryWorkflow(Workflow):
             num_choices=len(self.choice_descriptions),
             max_outputs=len(self.choice_descriptions),
         )
-
 
         # get choices selected by LLM
         choices_str = self._get_choice_str(self.choice_descriptions)
@@ -126,6 +134,7 @@ class RouterQueryWorkflow(Workflow):
         for resp in responses:
             if hasattr(resp, 'source_nodes'):
                 for node in resp.source_nodes:
+                    print("this is metadata",node.metadata)
                     source = {
                         'file_name': node.metadata.get('file_name', 'Unknown'),
                         'url': node.metadata.get('url', 'Unknown'),
@@ -157,3 +166,107 @@ class RouterQueryWorkflow(Workflow):
         )
         
         return StopEvent(result=final_response)
+
+async def main():
+    from indexer import Indexer
+    from llama_index.llms.gemini import Gemini
+    from llama_index.core.query_engine import RetrieverQueryEngine
+    try:
+        indexer = Indexer()
+        index = indexer.retrieve_index()
+        llm = Gemini(model = "models/gemini-2.0-flash")
+
+        doc_retriever = index.as_retriever(
+            retrieval_mode="files_via_content", 
+            files_top_k=1,
+            include_metadata=True
+        )
+        query_engine_doc = RetrieverQueryEngine.from_args(
+            doc_retriever, 
+            llm=llm, 
+            response_mode="tree_summarize",
+            response_synthesizer_kwargs={
+                "text_template": (
+                    "Document complet (pages {metadata[page_number]}):\n"
+                    "```\n"
+                    "{text}\n"
+                    "```\n\n"
+                ),
+                "include_metadata": True
+            }
+        )
+
+        chunk_retriever = index.as_retriever(
+            retrieval_mode="chunks", 
+            rerank_top_n=10,
+            include_metadata=True
+        )
+        query_engine_chunk = RetrieverQueryEngine.from_args(
+            chunk_retriever, 
+            llm=llm, 
+            response_mode="tree_summarize",
+            response_synthesizer_kwargs={
+                "text_template": (
+                    "Page {metadata[page_number]}:\n"
+                    "```\n"
+                    "{text}\n"
+                    "```\n\n"
+                ),
+                "include_metadata": True
+            }
+        )
+
+        # tells LLM to select choices given a list
+        ROUTER_PROMPT = PromptTemplate(
+            "Some choices are given below. It is provided in a numbered list (1 to"
+            " {num_choices}), where each item in the list corresponds to a"
+            " summary.\n---------------------\n{context_list}\n---------------------\nUsing"
+            " only the choices above and not prior knowledge, return the top choices"
+            " (no more than {max_outputs}, but only select what is needed) that are"
+            " most relevant to the question: '{query_str}'\n"
+        )
+
+
+        DOC_METADATA_EXTRA_STR = """\
+        Each document represents a PPT presentation produced by a consulting group
+
+        """
+
+        TOOL_DOC_DESC = f"""\
+        Synthesizes an answer to your question by feeding in an entire relevant document as context. Best used for higher-level summarization options.
+        Do NOT use if answer can be found in a specific chunk of a given document. Use the chunk_query_engine instead for that purpose.
+
+        Below we give details on the format of each document:
+        {DOC_METADATA_EXTRA_STR}
+        """
+
+        TOOL_CHUNK_DESC = f"""\
+        Synthesizes an answer to your question by feeding in a relevant chunk as context. Best used for questions that are more pointed in nature.
+        Do NOT use if the question asks seems to require a general summary of any given document. Use the doc_query_engine instead for that purpose.
+
+        Below we give details on the format of each document:
+        {DOC_METADATA_EXTRA_STR}
+        """
+
+        router_query_workflow = RouterQueryWorkflow(
+            query_engines=[query_engine_doc, query_engine_chunk],
+            choice_descriptions=[TOOL_DOC_DESC, TOOL_CHUNK_DESC],
+            verbose=True,
+            llm=llm,
+            router_prompt=ROUTER_PROMPT,
+            timeout=60
+        )
+        user_message = "tell me about the media in NYC in 2012"
+        
+        rag_response = await router_query_workflow.run(query_str=user_message)
+        print(rag_response)
+
+
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
+    
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())

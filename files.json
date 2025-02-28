@@ -1,0 +1,97 @@
+{
+    "files": [
+        {
+            "mimeType": "application/vnd.google-apps.folder",
+            "parents": ["0ADXgs33H_kOGUk9PVA"],
+            "owners": [
+                {
+                    "displayName": "Ayoub Project",
+                    "kind": "drive#user",
+                    "me": true,
+                    "permissionId": "05823936357014831389",
+                    "emailAddress": "ayoubprjct@gmail.com",
+                    "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocJdhbZ51UHU900Z17Dlh0HpdHIXijlLggc6oDCZDknm7TyEeQ=s64"
+                }
+            ],
+            "id": "1HMHR1JJeNeddzraYuQ9_uYwueNUcV9bm",
+            "name": "prez",
+            "createdTime": "2025-02-22T21:30:25.708Z",
+            "modifiedTime": "2025-02-22T21:30:25.708Z"
+        },
+        {
+            "mimeType": "application/pdf",
+            "parents": ["1HMHR1JJeNeddzraYuQ9_uYwueNUcV9bm"],
+            "owners": [
+                {
+                    "displayName": "Ayoub Project",
+                    "kind": "drive#user",
+                    "me": true,
+                    "permissionId": "05823936357014831389",
+                    "emailAddress": "ayoubprjct@gmail.com",
+                    "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocJdhbZ51UHU900Z17Dlh0HpdHIXijlLggc6oDCZDknm7TyEeQ=s64"
+                }
+            ],
+            "size": "290277",
+            "id": "1-62Hw7WHxvV2SCMMW3qQ40yXfN2IqmbF",
+            "name": "PDF_011_Boston_Consulting_Group_Proposal.pdf",
+            "createdTime": "2025-02-22T21:30:26.803Z",
+            "modifiedTime": "2025-02-21T05:06:40.000Z"
+        },
+        {
+            "mimeType": "application/pdf",
+            "parents": ["1HMHR1JJeNeddzraYuQ9_uYwueNUcV9bm"],
+            "owners": [
+                {
+                    "displayName": "Ayoub Project",
+                    "kind": "drive#user",
+                    "me": true,
+                    "permissionId": "05823936357014831389",
+                    "emailAddress": "ayoubprjct@gmail.com",
+                    "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocJdhbZ51UHU900Z17Dlh0HpdHIXijlLggc6oDCZDknm7TyEeQ=s64"
+                }
+            ],
+            "size": "1179110",
+            "id": "1w-dHJZgsqfn-htIOk7J_jEaFkFt4bf7D",
+            "name": "PDF_002_Media_in_NYC_2012.pdf",
+            "createdTime": "2025-02-22T21:30:27.110Z",
+            "modifiedTime": "2025-02-21T05:06:40.000Z"
+        },
+        {
+            "mimeType": "application/vnd.google.colaboratory",
+            "parents": ["1t-50XKyc2gRziGPeILo8ILJ86cmdo0Er"],
+            "owners": [
+                {
+                    "displayName": "Ayoub Project",
+                    "kind": "drive#user",
+                    "me": true,
+                    "permissionId": "05823936357014831389",
+                    "emailAddress": "ayoubprjct@gmail.com",
+                    "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocJdhbZ51UHU900Z17Dlh0HpdHIXijlLggc6oDCZDknm7TyEeQ=s64"
+                }
+            ],
+            "size": "18425",
+            "id": "171pNq_QgRT-dvicXuHTW5laH9hEf3UBw",
+            "name": "selenium.ipynb",
+            "createdTime": "2024-12-26T14:15:45.312Z",
+            "modifiedTime": "2024-12-26T14:19:52.765Z"
+        },
+        {
+            "mimeType": "application/vnd.google-apps.folder",
+            "parents": ["0ADXgs33H_kOGUk9PVA"],
+            "owners": [
+                {
+                    "displayName": "Ayoub Project",
+                    "kind": "drive#user",
+                    "me": true,
+                    "permissionId": "05823936357014831389",
+                    "emailAddress": "ayoubprjct@gmail.com",
+                    "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocJdhbZ51UHU900Z17Dlh0HpdHIXijlLggc6oDCZDknm7TyEeQ=s64"
+                }
+            ],
+            "id": "1t-50XKyc2gRziGPeILo8ILJ86cmdo0Er",
+            "name": "Colab Notebooks",
+            "createdTime": "2024-12-26T14:15:43.121Z",
+            "modifiedTime": "2024-12-26T14:15:43.121Z"
+        }
+    ]
+}

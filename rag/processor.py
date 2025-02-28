@@ -1,18 +1,22 @@
-from llama_index.llms.gemini import Gemini
 from router import RouterQueryWorkflow
-from helper import ROUTER_PROMPT
 from indexer import Indexer
 from agent import RouterOutputAgentWorkflow
+
+from llama_index.llms.gemini import Gemini
+from llama_index.core import PromptTemplate
 from llama_index.core.query_engine import RetrieverQueryEngine
-from IPython.display import display, Markdown
-import os 
-from dotenv import load_dotenv
-load_dotenv()
-import uvicorn, asyncio
+
+
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from convert import process_input
 from fastapi.middleware.cors import CORSMiddleware
+from IPython.display import display, Markdown
+from dotenv import load_dotenv
+load_dotenv()
+
+
 
 indexer = Indexer()
 index = indexer.retrieve_index()
@@ -58,6 +62,17 @@ query_engine_chunk = RetrieverQueryEngine.from_args(
         "include_metadata": True
     }
 )
+
+# tells LLM to select choices given a list
+ROUTER_PROMPT = PromptTemplate(
+    "Some choices are given below. It is provided in a numbered list (1 to"
+    " {num_choices}), where each item in the list corresponds to a"
+    " summary.\n---------------------\n{context_list}\n---------------------\nUsing"
+    " only the choices above and not prior knowledge, return the top choices"
+    " (no more than {max_outputs}, but only select what is needed) that are"
+    " most relevant to the question: '{query_str}'\n"
+)
+
 
 DOC_METADATA_EXTRA_STR = """\
 Each document represents a PPT presentation produced by a consulting group

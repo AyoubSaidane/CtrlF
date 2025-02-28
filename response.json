@@ -1,0 +1,446 @@
+[
+  {
+    "response": "The media market has huge potential that is yet to be unlocked, even with rapid growth. Internet penetration in many countries is still behind other G20 peers. As of July 2016, the UK had 92% penetration, Japan had 91.1%, the US had 88.5%, Canada had 88.5%, and Germany had 88%.\n",
+    "source_nodes": [
+      {
+        "node": {
+          "id_": "e7b9dfc9-e6fe-4694-abd3-5e2a5f864721",
+          "embedding": null,
+          "metadata": {
+            "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+            "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+            "file_type": "application/pdf",
+            "file_size": 1159767,
+            "creation_date": "2025-02-22",
+            "last_modified_date": "2025-02-22",
+            "page_number": 14,
+            "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+          },
+          "excluded_embed_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "excluded_llm_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "relationships": {
+            "1": {
+              "node_id": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf_part_13",
+              "node_type": "4",
+              "metadata": {
+                "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+                "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+                "file_type": "application/pdf",
+                "file_size": 1159767,
+                "creation_date": "2025-02-22",
+                "last_modified_date": "2025-02-22",
+                "page_number": 14,
+                "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+              },
+              "hash": "734f283c2c2be0af1075469160984de9628e319d518c45043d5c34aa74e274d3"
+            }
+          },
+          "metadata_template": "{key}: {value}",
+          "metadata_separator": "\n",
+          "text": "START OF PAGE: 14\n# Appendix | Typical maturity archetypes defined\n\n|  | Nascent | Emerging | Connected | Multi-moment |\n|---|---|---|---|---|\n| Data-driven Targeting | Use of 3rd party data targeting awareness with broad audience Limited 1st party data | 1st and 3rd party data targeting awareness and purchase with audiences defined largely by demographics | Range of online & offline data linked to target audiences along purchase funnel, defined largely by demographics and behaviours | Holistic customer view from fully linked online and offline data to target customers along funnel, based on demand spaces |\n| Automated Activation | Most digital media in direct buys and limited use of CRM signals | Primarily programmatic media buys, using manual bids Use of multiple creatives and signals in some channels | Programmatic buys in digital channels, with rules-based bids Dynamic creative automated in some channels | Programmatic buys optimized with cross-channel signals Personalised creative co-ordinated & sequenced across channels |\n| Measurement & Attribution | Some mix measurement but lack attribution or testing methods Activity evaluation based on campaign KPI metrics | Use last click attribution, A/B testing and mix measurement Conversion KPIs feedback to campaign planning | Multiple measurements incl. non-last click attribution Business outcome KPIs feedback to ongoing activity | Measurement incl. fractional attribution and frequent testing Business outcome and CLV KPIs optimize in-flight activity |\n| Organization collaboration | Primarily siloed teams with agencies operating at arms length | Key functions working together to clear objectives Project based test & learn Agencies drive execution but closely integrated | Cross functional teaming with common objectives Multiple test & learn pilots Agencies embedded and collaborate | Agile teaming and test & learn part of BAU Key activities insourced complimented by specialist agencies |\n\nSource: BCG Digital Marketing Maturity study 2018, Australia & New Zealand brands\n\nEND OF PAGE: 14",
+          "mimetype": "text/plain",
+          "start_char_idx": 0,
+          "end_char_idx": 2066,
+          "metadata_seperator": "\n",
+          "text_template": "{metadata_str}\n\n{content}"
+        },
+        "score": 0.21245404797878742
+      },
+      {
+        "node": {
+          "id_": "e6e1ae6a-e58a-4400-822e-abff3840bc47",
+          "embedding": null,
+          "metadata": {
+            "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+            "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+            "file_type": "application/pdf",
+            "file_size": 1377264,
+            "creation_date": "2025-02-22",
+            "last_modified_date": "2025-02-22",
+            "page_number": 7,
+            "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+          },
+          "excluded_embed_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "excluded_llm_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "relationships": {
+            "1": {
+              "node_id": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf_part_6",
+              "node_type": "4",
+              "metadata": {
+                "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+                "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+                "file_type": "application/pdf",
+                "file_size": 1377264,
+                "creation_date": "2025-02-22",
+                "last_modified_date": "2025-02-22",
+                "page_number": 7,
+                "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+              },
+              "hash": "5cae0ad84f75cc3a5a177b0c67c020e21649c64ed075f5bd37f5f62283a0b37f"
+            }
+          },
+          "metadata_template": "{key}: {value}",
+          "metadata_separator": "\n",
+          "text": "START OF PAGE: 7\nMarket characteristics\n\n**Potential:** Huge potential is yet to be unlocked despite rapid growth, with Internet penetration lagging behind G20 peers\n\nInternet penetration of G20 countries (% as of July 2016)\n\nHere is the data extracted from the bar chart:\n\n| Country       | Penetration (%) |\n|---------------|-----------------|\n| UK            | 92.0            |\n| Japan         | 91.1            |\n| US            | 88.5            |\n| Canada        | 88.5            |\n| Germany       | 88.0            |\n| France        | 86.4            |\n| South Korea   | 85.7            |\n| EU            | 85.6            |\n| Australia     | 85.5            |\n| Russia        | 71.2            |\n| Argentina     | 69.2            |\n| Italy         | 65.6            |\n| Saudi Arabia  | 64.7            |\n| Brazil        | 56.4            |\n| China         | 52.2            |\n| South Africa  | 52.0            |\n| Turkey        | 50.0            |\n| Mexico        | 45.1            |\n| India         | 34.3            |\n| Indonesia     | 20.4            |\n\nDeveloped countries\n\nEmerging countries\n\nSources: Internet Live Stats.\nChina Internet report-EN-FINAL.pptx\n\nCopyright © 2017 by The Boston Consulting Group, Inc. All rights reserved.\nEND OF PAGE: 7",
+          "mimetype": "text/plain",
+          "start_char_idx": 0,
+          "end_char_idx": 1264,
+          "metadata_seperator": "\n",
+          "text_template": "{metadata_str}\n\n{content}"
+        },
+        "score": 0.21346231559884676
+      }
+    ],
+    "metadata": {
+      "e7b9dfc9-e6fe-4694-abd3-5e2a5f864721": {
+        "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+        "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+        "file_type": "application/pdf",
+        "file_size": 1159767,
+        "creation_date": "2025-02-22",
+        "last_modified_date": "2025-02-22",
+        "page_number": 14,
+        "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+      },
+      "e6e1ae6a-e58a-4400-822e-abff3840bc47": {
+        "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+        "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+        "file_type": "application/pdf",
+        "file_size": 1377264,
+        "creation_date": "2025-02-22",
+        "last_modified_date": "2025-02-22",
+        "page_number": 7,
+        "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+      }
+    }
+  }
+]
+
+
+
+
+[
+  {
+    "response": "Despite rapid growth, the media market has huge potential that is yet to be unlocked. As of July 2016, when compared to G20 peers, internet penetration was as follows: UK (92.0%), Japan (91.1%), US (88.5%), Canada (88.5%), Germany (88.0%), France (86.4%), South Korea (85.7%), EU (85.6%), Australia (85.5%), Russia (71.2%), Argentina (69.2%), Italy (65.6%), Saudi Arabia (64.7%), Brazil (56.4%), China (52.2%), South Africa (52.0%), Turkey (50.0%), Mexico (45.1%), India (34.3%), and Indonesia (20.4%).\n",
+    "source_nodes": [
+      {
+        "node": {
+          "id_": "e7b9dfc9-e6fe-4694-abd3-5e2a5f864721",
+          "embedding": null,
+          "metadata": {
+            "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+            "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+            "file_type": "application/pdf",
+            "file_size": 1159767,
+            "creation_date": "2025-02-22",
+            "last_modified_date": "2025-02-22",
+            "page_number": 14,
+            "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+          },
+          "excluded_embed_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "excluded_llm_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "relationships": {
+            "1": {
+              "node_id": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf_part_13",
+              "node_type": "4",
+              "metadata": {
+                "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+                "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+                "file_type": "application/pdf",
+                "file_size": 1159767,
+                "creation_date": "2025-02-22",
+                "last_modified_date": "2025-02-22",
+                "page_number": 14,
+                "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+              },
+              "hash": "734f283c2c2be0af1075469160984de9628e319d518c45043d5c34aa74e274d3"
+            }
+          },
+          "metadata_template": "{key}: {value}",
+          "metadata_separator": "\n",
+          "text": "START OF PAGE: 14\n# Appendix | Typical maturity archetypes defined\n\n|  | Nascent | Emerging | Connected | Multi-moment |\n|---|---|---|---|---|\n| Data-driven Targeting | Use of 3rd party data targeting awareness with broad audience Limited 1st party data | 1st and 3rd party data targeting awareness and purchase with audiences defined largely by demographics | Range of online & offline data linked to target audiences along purchase funnel, defined largely by demographics and behaviours | Holistic customer view from fully linked online and offline data to target customers along funnel, based on demand spaces |\n| Automated Activation | Most digital media in direct buys and limited use of CRM signals | Primarily programmatic media buys, using manual bids Use of multiple creatives and signals in some channels | Programmatic buys in digital channels, with rules-based bids Dynamic creative automated in some channels | Programmatic buys optimized with cross-channel signals Personalised creative co-ordinated & sequenced across channels |\n| Measurement & Attribution | Some mix measurement but lack attribution or testing methods Activity evaluation based on campaign KPI metrics | Use last click attribution, A/B testing and mix measurement Conversion KPIs feedback to campaign planning | Multiple measurements incl. non-last click attribution Business outcome KPIs feedback to ongoing activity | Measurement incl. fractional attribution and frequent testing Business outcome and CLV KPIs optimize in-flight activity |\n| Organization collaboration | Primarily siloed teams with agencies operating at arms length | Key functions working together to clear objectives Project based test & learn Agencies drive execution but closely integrated | Cross functional teaming with common objectives Multiple test & learn pilots Agencies embedded and collaborate | Agile teaming and test & learn part of BAU Key activities insourced complimented by specialist agencies |\n\nSource: BCG Digital Marketing Maturity study 2018, Australia & New Zealand brands\n\nEND OF PAGE: 14",
+          "mimetype": "text/plain",
+          "start_char_idx": 0,
+          "end_char_idx": 2066,
+          "metadata_seperator": "\n",
+          "text_template": "{metadata_str}\n\n{content}"
+        },
+        "score": 0.21245404797878742
+      },
+      {
+        "node": {
+          "id_": "e6e1ae6a-e58a-4400-822e-abff3840bc47",
+          "embedding": null,
+          "metadata": {
+            "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+            "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+            "file_type": "application/pdf",
+            "file_size": 1377264,
+            "creation_date": "2025-02-22",
+            "last_modified_date": "2025-02-22",
+            "page_number": 7,
+            "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+          },
+          "excluded_embed_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "excluded_llm_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "relationships": {
+            "1": {
+              "node_id": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf_part_6",
+              "node_type": "4",
+              "metadata": {
+                "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+                "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+                "file_type": "application/pdf",
+                "file_size": 1377264,
+                "creation_date": "2025-02-22",
+                "last_modified_date": "2025-02-22",
+                "page_number": 7,
+                "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+              },
+              "hash": "5cae0ad84f75cc3a5a177b0c67c020e21649c64ed075f5bd37f5f62283a0b37f"
+            }
+          },
+          "metadata_template": "{key}: {value}",
+          "metadata_separator": "\n",
+          "text": "START OF PAGE: 7\nMarket characteristics\n\n**Potential:** Huge potential is yet to be unlocked despite rapid growth, with Internet penetration lagging behind G20 peers\n\nInternet penetration of G20 countries (% as of July 2016)\n\nHere is the data extracted from the bar chart:\n\n| Country       | Penetration (%) |\n|---------------|-----------------|\n| UK            | 92.0            |\n| Japan         | 91.1            |\n| US            | 88.5            |\n| Canada        | 88.5            |\n| Germany       | 88.0            |\n| France        | 86.4            |\n| South Korea   | 85.7            |\n| EU            | 85.6            |\n| Australia     | 85.5            |\n| Russia        | 71.2            |\n| Argentina     | 69.2            |\n| Italy         | 65.6            |\n| Saudi Arabia  | 64.7            |\n| Brazil        | 56.4            |\n| China         | 52.2            |\n| South Africa  | 52.0            |\n| Turkey        | 50.0            |\n| Mexico        | 45.1            |\n| India         | 34.3            |\n| Indonesia     | 20.4            |\n\nDeveloped countries\n\nEmerging countries\n\nSources: Internet Live Stats.\nChina Internet report-EN-FINAL.pptx\n\nCopyright © 2017 by The Boston Consulting Group, Inc. All rights reserved.\nEND OF PAGE: 7",
+          "mimetype": "text/plain",
+          "start_char_idx": 0,
+          "end_char_idx": 1264,
+          "metadata_seperator": "\n",
+          "text_template": "{metadata_str}\n\n{content}"
+        },
+        "score": 0.21346231559884676
+      }
+    ],
+    "metadata": {
+      "e7b9dfc9-e6fe-4694-abd3-5e2a5f864721": {
+        "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+        "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+        "file_type": "application/pdf",
+        "file_size": 1159767,
+        "creation_date": "2025-02-22",
+        "last_modified_date": "2025-02-22",
+        "page_number": 14,
+        "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+      },
+      "e6e1ae6a-e58a-4400-822e-abff3840bc47": {
+        "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+        "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+        "file_type": "application/pdf",
+        "file_size": 1377264,
+        "creation_date": "2025-02-22",
+        "last_modified_date": "2025-02-22",
+        "page_number": 7,
+        "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+      }
+    }
+  }
+]
+
+
+
+
+
+
+
+[
+  {
+    "response": "Despite rapid growth, the media market has huge potential that is yet to be unlocked. As of July 2016, when compared to G20 peers, internet penetration was as follows: UK (92.0%), Japan (91.1%), US (88.5%), Canada (88.5%), Germany (88.0%), France (86.4%), South Korea (85.7%), EU (85.6%), Australia (85.5%), Russia (71.2%), Argentina (69.2%), Italy (65.6%), Saudi Arabia (64.7%), Brazil (56.4%), China (52.2%), South Africa (52.0%), Turkey (50.0%), Mexico (45.1%), India (34.3%), and Indonesia (20.4%).\n",
+    "source_nodes": [
+      {
+        "node": {
+          "id_": "e7b9dfc9-e6fe-4694-abd3-5e2a5f864721",
+          "embedding": null,
+          "metadata": {
+            "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+            "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+            "file_type": "application/pdf",
+            "file_size": 1159767,
+            "creation_date": "2025-02-22",
+            "last_modified_date": "2025-02-22",
+            "page_number": 14,
+            "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+          },
+          "excluded_embed_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "excluded_llm_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "relationships": {
+            "1": {
+              "node_id": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf_part_13",
+              "node_type": "4",
+              "metadata": {
+                "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+                "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+                "file_type": "application/pdf",
+                "file_size": 1159767,
+                "creation_date": "2025-02-22",
+                "last_modified_date": "2025-02-22",
+                "page_number": 14,
+                "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+              },
+              "hash": "734f283c2c2be0af1075469160984de9628e319d518c45043d5c34aa74e274d3"
+            }
+          },
+          "metadata_template": "{key}: {value}",
+          "metadata_separator": "\n",
+          "text": "START OF PAGE: 14\n# Appendix | Typical maturity archetypes defined\n\n|  | Nascent | Emerging | Connected | Multi-moment |\n|---|---|---|---|---|\n| Data-driven Targeting | Use of 3rd party data targeting awareness with broad audience Limited 1st party data | 1st and 3rd party data targeting awareness and purchase with audiences defined largely by demographics | Range of online & offline data linked to target audiences along purchase funnel, defined largely by demographics and behaviours | Holistic customer view from fully linked online and offline data to target customers along funnel, based on demand spaces |\n| Automated Activation | Most digital media in direct buys and limited use of CRM signals | Primarily programmatic media buys, using manual bids Use of multiple creatives and signals in some channels | Programmatic buys in digital channels, with rules-based bids Dynamic creative automated in some channels | Programmatic buys optimized with cross-channel signals Personalised creative co-ordinated & sequenced across channels |\n| Measurement & Attribution | Some mix measurement but lack attribution or testing methods Activity evaluation based on campaign KPI metrics | Use last click attribution, A/B testing and mix measurement Conversion KPIs feedback to campaign planning | Multiple measurements incl. non-last click attribution Business outcome KPIs feedback to ongoing activity | Measurement incl. fractional attribution and frequent testing Business outcome and CLV KPIs optimize in-flight activity |\n| Organization collaboration | Primarily siloed teams with agencies operating at arms length | Key functions working together to clear objectives Project based test & learn Agencies drive execution but closely integrated | Cross functional teaming with common objectives Multiple test & learn pilots Agencies embedded and collaborate | Agile teaming and test & learn part of BAU Key activities insourced complimented by specialist agencies |\n\nSource: BCG Digital Marketing Maturity study 2018, Australia & New Zealand brands\n\nEND OF PAGE: 14",
+          "mimetype": "text/plain",
+          "start_char_idx": 0,
+          "end_char_idx": 2066,
+          "metadata_seperator": "\n",
+          "text_template": "{metadata_str}\n\n{content}"
+        },
+        "score": 0.21245404797878742
+      },
+      {
+        "node": {
+          "id_": "e6e1ae6a-e58a-4400-822e-abff3840bc47",
+          "embedding": null,
+          "metadata": {
+            "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+            "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+            "file_type": "application/pdf",
+            "file_size": 1377264,
+            "creation_date": "2025-02-22",
+            "last_modified_date": "2025-02-22",
+            "page_number": 7,
+            "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+          },
+          "excluded_embed_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "excluded_llm_metadata_keys": [
+            "file_name",
+            "file_type",
+            "file_size",
+            "creation_date",
+            "last_modified_date",
+            "last_accessed_date"
+          ],
+          "relationships": {
+            "1": {
+              "node_id": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf_part_6",
+              "node_type": "4",
+              "metadata": {
+                "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+                "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+                "file_type": "application/pdf",
+                "file_size": 1377264,
+                "creation_date": "2025-02-22",
+                "last_modified_date": "2025-02-22",
+                "page_number": 7,
+                "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+              },
+              "hash": "5cae0ad84f75cc3a5a177b0c67c020e21649c64ed075f5bd37f5f62283a0b37f"
+            }
+          },
+          "metadata_template": "{key}: {value}",
+          "metadata_separator": "\n",
+          "text": "START OF PAGE: 7\nMarket characteristics\n\n**Potential:** Huge potential is yet to be unlocked despite rapid growth, with Internet penetration lagging behind G20 peers\n\nInternet penetration of G20 countries (% as of July 2016)\n\nHere is the data extracted from the bar chart:\n\n| Country       | Penetration (%) |\n|---------------|-----------------|\n| UK            | 92.0            |\n| Japan         | 91.1            |\n| US            | 88.5            |\n| Canada        | 88.5            |\n| Germany       | 88.0            |\n| France        | 86.4            |\n| South Korea   | 85.7            |\n| EU            | 85.6            |\n| Australia     | 85.5            |\n| Russia        | 71.2            |\n| Argentina     | 69.2            |\n| Italy         | 65.6            |\n| Saudi Arabia  | 64.7            |\n| Brazil        | 56.4            |\n| China         | 52.2            |\n| South Africa  | 52.0            |\n| Turkey        | 50.0            |\n| Mexico        | 45.1            |\n| India         | 34.3            |\n| Indonesia     | 20.4            |\n\nDeveloped countries\n\nEmerging countries\n\nSources: Internet Live Stats.\nChina Internet report-EN-FINAL.pptx\n\nCopyright © 2017 by The Boston Consulting Group, Inc. All rights reserved.\nEND OF PAGE: 7",
+          "mimetype": "text/plain",
+          "start_char_idx": 0,
+          "end_char_idx": 1264,
+          "metadata_seperator": "\n",
+          "text_template": "{metadata_str}\n\n{content}"
+        },
+        "score": 0.21346231559884676
+      }
+    ],
+    "metadata": {
+      "e7b9dfc9-e6fe-4694-abd3-5e2a5f864721": {
+        "file_path": "temp_8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+        "file_name": "8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf",
+        "file_type": "application/pdf",
+        "file_size": 1159767,
+        "creation_date": "2025-02-22",
+        "last_modified_date": "2025-02-22",
+        "page_number": 14,
+        "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/8cb0e192-2967-4fcc-927b-e3439a0c5a4f.pdf?"
+      },
+      "e6e1ae6a-e58a-4400-822e-abff3840bc47": {
+        "file_path": "temp_5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+        "file_name": "5d8e50f6-def3-401c-924b-53cc1299abd5.pdf",
+        "file_type": "application/pdf",
+        "file_size": 1377264,
+        "creation_date": "2025-02-22",
+        "last_modified_date": "2025-02-22",
+        "page_number": 7,
+        "url": "https://jziorpwgdnhsijnqsott.supabase.co/storage/v1/object/public/slides/5d8e50f6-def3-401c-924b-53cc1299abd5.pdf?"
+      }
+    }
+  }
+]
