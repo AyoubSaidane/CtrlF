@@ -33,7 +33,7 @@ SUPABASE_KEY=your_supabase_api_key
 
 ## Backend server
 
-
+Open a new terminal where venv is activated and start the server
 ```bash
 python3 -m main
 ```
