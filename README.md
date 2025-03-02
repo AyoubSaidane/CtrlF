@@ -31,22 +31,13 @@ SUPABASE_URL=your_supabase_project_url
 SUPABASE_KEY=your_supabase_api_key
 ```
 
-## Document Processing
+## Backend server
 
-1. Parse your documents:
+
 ```bash
-python3 rag/parser.py
+python3 -m main
 ```
 
-2. Generate embeddings:
-```bash
-python3 rag/embeder.py
-```
-
-3. Start the processing server:
-```bash
-python3 rag/processor.py
-```
 
 ## Frontend Setup
 
